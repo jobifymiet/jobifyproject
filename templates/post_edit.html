@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container bg-dark navbar-dark" style="text-align:center;color:#ff8126;text-transform:uppercase">
+    <h1 style="color:#fc8403">EDIT POST</h1>
+    <form action="" method="post">{% csrf_token %}
+        {{form.as_p}}
+        <button type="input" class="btn btn-outline-success" style="margin-bottom:10px;">UPADATE</button>
+    </form></div>
+{% endblock content %}

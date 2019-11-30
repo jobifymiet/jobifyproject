@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container bg-dark navbar-dark" style="text-align:center;color:#ff8126;text-transform:uppercase">
+    <h1>NEW RESUME</h1><br>
+    <form action="" method="post">{% csrf_token %}{{ form.as_p }}
+        <input class="btn btn-primarygi" style="margin-bottom:10px;" type="submit" value="SAVE">
+    </form>
+</div>
+{% endblock content %}

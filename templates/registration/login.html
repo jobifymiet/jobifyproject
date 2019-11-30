@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<div style="text-align:center;">
+<h1 style="color:green;">SIGN IN</h1>
+<form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+   <input class="btn btn-success" type="submit" value="SIGN IN">
+</form></div>
+{% endblock content %}

@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+     {% if user.is_authenticated  %}
+    <div>
+
+<div class="card " style="text-align:center;margin-top:5px;">
+    <h3 class="card-header" ><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h3>
+  <div class="card-body">
+      <h5 class="card-title">{{ post.technical_skills }}</h5>
+    <p class="card-text">{{ post.description }}</p>
+   </div>
+    </div>
+    <div class="post-entry">
+        <ul class="list-group">
+      <a href="#" class="list-group-item list-group-item-action active">
+          PERSONAL INFORMATION </a>
+  <li class="list-group-item ">NAME : {{object.name}}</li>
+  <li class="list-group-item">CONTACT NUMBER : {{object.contact_no}}</li>
+  <li class="list-group-item">EMAIL : {{object.email_id}}</li>
+ <li class="list-group-item">ADDRESS : {{object.address}}</li>
+</ul>  <ul class="list-group">
+      <a href="#" class="list-group-item list-group-item-action active">
+          SCHOOLING DETAILS </a>
+  <li class="list-group-item ">10th BOARD : {{object.x_board}}</li>
+  <li class="list-group-item">10th PERCENTAGE: {{object.x_percentage}}</li>
+  <li class="list-group-item">12th BOARD : {{object.xii_board}}</li>
+ <li class="list-group-item">12th PERCENTAGE: {{object.xii_percentage}}</li>
+</ul>  <ul class="list-group">
+      <a href="#" class="list-group-item list-group-item-action active">
+          GRADUATION DETAILS</a>
+  <li class="list-group-item ">UNIVERSITY : {{object.grad_university }}</li>
+  <li class="list-group-item">COLLEGE : {{object.grad_college}}</li>
+         <li class="list-group-item">COURSE : {{object.grad_course}}</li>
+  <li class="list-group-item">SPECIALISATION : {{object.grad_specialisation}}</li>
+ <li class="list-group-item">PERCENTAGE : {{object.grad_percentage}}</li>
+        <li class="list-group-item">YEAR OF PASSING : {{object.grad_year_of_passing}}</li>
+</ul>
+         <ul class="list-group">
+      <a href="#" class="list-group-item list-group-item-action active">
+          POST GRADUATION DETAILS</a>
+  <li class="list-group-item ">UNIVERSITY : {{object.pg_university}}</li>
+  <li class="list-group-item">COLLEGE : {{object.pg_college}}</li>
+         <li class="list-group-item">COURSE : {{object.pg_course}}</li>
+  <li class="list-group-item">SPECIALISATION : {{object.pg_specialisation}}</li>
+ <li class="list-group-item">PERCENTAGE : {{object.pg_percentage}}</li>
+        <li class="list-group-item">YEAR OF PASSING : {{object.pg_year_of_passing}}</li>
+</ul>
+
+ <ul class="list-group">
+      <a href="#" class="list-group-item list-group-item-action active">
+          SKILLS </a>
+  <li class="list-group-item ">TECHNICAL SKILLS : {{object.technical_skills}}</li>
+  <li class="list-group-item">NON TECHNICAL SKILLS: {{object.non_technical_skills}}</li>
+ </ul>
+    </div>
+        <div style="text-align:center;margin:10px;">
+         <a class="btn btn-outline-warning" role="button" href="{% url 'post_edit' post.pk %}" >> UPDATE RESUME</a>
+   <a class="btn btn-outline-danger" role="button" href="{% url 'post_delete' post.pk %}">> DELETE RESUME</a></div>
+    </div>
+    {% else %}
+        <div style="text-align:center;color:red;margin-top:20px">
+    <h3>Please SIGN IN</h3></div>
+
+    {% endif %}
+</div>
+{% endblock content %}
